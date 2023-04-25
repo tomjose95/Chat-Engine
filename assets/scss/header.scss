@@ -1,0 +1,47 @@
+$main-bg: #007fff;
+$btn-text: #ffffff;
+$btn-hover: #0060c1;
+$navbar-shadow: #e7ebf0;
+.nav {
+  &_bar {
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_brand {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $main-bg;
+  }
+  &_button {
+    background-color: $main-bg;
+    color: $btn-text;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  &_button:hover {
+    background-color: $btn-hover;
+  }
+  &_user {
+    &_data {
+      display: flex;
+      align-items: center;
+    }
+    &_image {
+      width: 3rem;
+      border-radius: 0.5rem;
+      padding: 0 0.2rem;
+    }
+    &_username {
+      color: $main-bg;
+      font-weight: 500;
+      padding: 0 0.2rem;
+    }
+  }
+}
