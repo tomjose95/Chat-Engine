@@ -1,0 +1,175 @@
+$main-bg: #f1f4f7;
+$chat-border: #e7ebf0;
+$chat-main-bg: hsl(0, 0%, 100%);
+$main-color: #007fff;
+$main-color-hover: #0370dd;
+$chat-timestamp: #cbcbcb;
+$main-bg: #f1f4f7;
+$btn-color: #ffffff;
+$chat-color: #000000;
+.chat {
+  width: 100%;
+  background-color: $main-bg;
+  display: flex;
+  justify-content: center;
+  &_button {
+    background-color: $main-color;
+    border: none;
+    color: $btn-color;
+    padding: 0.8rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 0.5rem;
+  }
+  &_button:hover {
+    background-color: $main-color-hover;
+  }
+  &_box {
+    &_main {
+      width: 100%;
+      height: 39.6rem;
+      display: flex;
+      overflow: auto;
+      flex-direction: column;
+    }
+    &_friend {
+      margin: 1rem;
+      padding: 1rem;
+      background-color: $main-bg;
+      color: $chat-color;
+      border-radius: 1rem;
+      width: 50%;
+    }
+
+    &_mainuser {
+      margin: 1rem;
+      padding: 1rem;
+      background-color: $main-color;
+      color: $btn-color;
+      margin-left: auto;
+      border-radius: 1rem;
+      width: 50%;
+    }
+    &_header {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+    &_username {
+      padding-left: 0.6rem;
+    }
+    &_image {
+      width: 3rem;
+      border-radius: 100%;
+    }
+    &_text {
+      width: 100%;
+      background-color: $main-bg;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      border-bottom-left-radius: 0.4rem;
+      border-bottom: 0.1rem solid $chat-border;
+    }
+    &_input {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+    }
+    &_input:focus {
+      outline: none;
+    }
+  }
+  &_friend {
+    &_add {
+      margin-left: auto;
+      background-color: $main-color;
+      border: none;
+      color: $btn-color;
+      padding: 0.8rem;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    &_list {
+      display: flex;
+      padding: 1rem;
+      align-items: center;
+      padding: 1.4rem 1rem;
+      border-bottom: 0.1rem solid $chat-border;
+      cursor: pointer;
+    }
+    &_list:hover {
+      background-color: $chat-border;
+    }
+    &_image {
+      width: 2rem;
+      border-radius: 100%;
+    }
+    &_username {
+      padding: 0 0.5rem;
+    }
+    &_timestamp {
+      margin-left: auto;
+      color: $chat-timestamp;
+    }
+  }
+  &_current {
+    &_user {
+      background-color: $main-bg;
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+    }
+    &_username {
+      font-size: bold;
+      padding: 0 0.5rem;
+      color: $main-color;
+    }
+    &_image {
+      width: 2rem;
+      border-radius: 100%;
+    }
+  }
+  &_searchbar {
+    width: 100;
+    display: flex;
+    justify-content: center;
+    border-bottom: 0.1rem solid $chat-border;
+    &_input {
+      width: 90%;
+      border: none;
+      background: $main-bg;
+      border-radius: 2rem;
+      padding: 1rem 1rem;
+      margin: 0.4rem;
+    }
+    &_input:focus {
+      outline: none;
+    }
+  }
+  &_container {
+    width: 70%;
+    background-color: $chat-main-bg;
+    border: 0.1rem solid $chat-border;
+    border-radius: 1rem;
+    margin: 1.4rem 0;
+    display: flex;
+  }
+  &_users {
+    width: 30%;
+    border-right: 0.1rem solid $chat-border;
+  }
+  &_box {
+    width: 70%;
+    &_header {
+      width: 100%;
+      background-color: $main-bg;
+    }
+    &_main {
+      width: 100%;
+    }
+  }
+}
