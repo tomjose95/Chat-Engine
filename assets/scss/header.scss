@@ -3,6 +3,7 @@ $btn-text: #ffffff;
 $btn-hover: #0060c1;
 $main-bg: #f1f4f7;
 $navbar-shadow: #e7ebf0;
+$nav-border: #dddfe2;
 .nav {
   &_main {
     width: 70%;
@@ -34,6 +35,7 @@ $navbar-shadow: #e7ebf0;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 0.1rem solid $nav-border;
   }
 
   &_brand {

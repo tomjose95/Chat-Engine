@@ -1,0 +1,63 @@
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f1f4f7; }
+  .home_session {
+    width: 70%;
+    display: flex;
+    margin-top: 2rem; }
+  .home_title {
+    color: #007fff;
+    font-size: 3.4rem;
+    font-weight: 700;
+    padding-bottom: 1.2rem; }
+  .home_description {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-bottom: 2rem; }
+  .home_signup {
+    display: flex;
+    flex-direction: column; }
+  .home_form {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    padding: 1rem; }
+    .home_form ::placeholder {
+      color: #9a9a9a; }
+    .home_form_input {
+      padding: 1rem;
+      margin: 0.4rem;
+      border: 0.1rem solid #dddfe2;
+      border-radius: 0.6rem; }
+    .home_form_input:focus {
+      outline-color: #007fff; }
+    .home_form_button {
+      display: flex; }
+    .home_form_btn, .home_form_gbtn {
+      padding: 1rem;
+      margin: 0.4rem;
+      width: 50%;
+      background-color: #007fff;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 0.6rem;
+      cursor: pointer; }
+    .home_form_gbtn {
+      background-color: #ffffff;
+      color: #007fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      cursor: pointer; }
+
+.google-icon {
+  width: 2rem; }

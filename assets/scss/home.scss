@@ -1,0 +1,85 @@
+$home-title-text: #007fff;
+$main-bg: #f1f4f7;
+$form-input-border: #dddfe2;
+$form-shadow: rgba(0, 0, 0, 0.1);
+$form-bg: #ffffff;
+$google-btn-text: #000000;
+$placeholder-text: #9a9a9a;
+$bg-dark: #091827;
+
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: $main-bg;
+  &_session {
+    width: 70%;
+    display: flex;
+    margin-top: 2rem;
+  }
+  &_title {
+    color: $home-title-text;
+    font-size: 3.4rem;
+    font-weight: 700;
+    padding-bottom: 1.2rem;
+  }
+  &_description {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-bottom: 2rem;
+  }
+  &_signup {
+    display: flex;
+    flex-direction: column;
+  }
+  &_form {
+    background-color: $form-bg;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 4px $form-shadow, 0 8px 16px $form-shadow;
+    justify-content: center;
+    padding: 1rem;
+    ::placeholder {
+      color: $placeholder-text;
+    }
+    &_input {
+      padding: 1rem;
+      margin: 0.4rem;
+      border: 0.1rem solid $form-input-border;
+      border-radius: 0.6rem;
+    }
+    &_input:focus {
+      outline-color: $home-title-text;
+    }
+    &_button {
+      display: flex;
+    }
+    &_btn {
+      padding: 1rem;
+      margin: 0.4rem;
+      width: 50%;
+      background-color: $home-title-text;
+      color: $form-bg;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 0.6rem;
+      cursor: pointer;
+    }
+    &_gbtn {
+      @extend .home_form_btn;
+      background-color: $form-bg;
+      color: $home-title-text;
+      box-shadow: 0 2px 4px $form-shadow, 0 8px 16px $form-shadow;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      cursor: pointer;
+    }
+  }
+}
+.google-icon {
+  width: 2rem;
+}
