@@ -4,17 +4,20 @@
             <h1 class="home_title">ChatZip</h1>
             <p class="home_description">ChatZip helps you connect and share with the people in your life.
             </p>
-            <form action="" method="post" class="home_form">
-                <input type="email" name="" id="" class="home_form_input" placeholder="Email" required>
-                <input type="password" name="" id="" class="home_form_input" placeholder="Password" required>
-                <div class="home_form_button">
-                    <button type="submit" class="home_form_btn">Sign Up</button>
-                    <button type="submit" class="home_form_gbtn"><img
+            <div class="home_form">
+                <form action="/create-session" method="post">
+                    <input type="email" name="email" id="" class="home_form_input" placeholder="Email" required>
+                    <input type="password" name="password" id="" class="home_form_input" placeholder="Password"
+                        required>
+
+                    <button type="submit" class="home_form_btn">Sign In</button>
+                </form>
+                <hr class="home_hr">
+                <a href="/auth/google" class="signup_google"> <button class="home_form_gbtn"><img
                             src="https://seekicon.com/free-icon-download/google_4.svg" alt="google-icon"
                             class="google-icon"> Sign In with
-                        Google</button>
-                </div>
-            </form>
+                        Google</button></a>
+            </div>
         </div>
         <div class="home_messaging_image">
             <img src="images/Messaging.gif" alt="messaging" class="home_image">

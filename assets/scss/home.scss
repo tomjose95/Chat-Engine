@@ -12,6 +12,11 @@ $bg-dark: #091827;
   display: flex;
   justify-content: center;
   background: $main-bg;
+  &_hr {
+    margin: 1rem;
+    width: 95%;
+    background-color: #9a9a9a;
+  }
   &_session {
     width: 70%;
     display: flex;
@@ -45,6 +50,7 @@ $bg-dark: #091827;
       color: $placeholder-text;
     }
     &_input {
+      width: 97%;
       padding: 1rem;
       margin: 0.4rem;
       border: 0.1rem solid $form-input-border;
@@ -59,7 +65,7 @@ $bg-dark: #091827;
     &_btn {
       padding: 1rem;
       margin: 0.4rem;
-      width: 50%;
+      width: 97%;
       background-color: $home-title-text;
       color: $form-bg;
       font-weight: 700;
@@ -69,6 +75,7 @@ $bg-dark: #091827;
       cursor: pointer;
     }
     &_gbtn {
+      width: 100%;
       @extend .home_form_btn;
       background-color: $form-bg;
       color: $home-title-text;

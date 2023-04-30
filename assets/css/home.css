@@ -3,6 +3,10 @@
   display: flex;
   justify-content: center;
   background: #f1f4f7; }
+  .home_hr {
+    margin: 1rem;
+    width: 95%;
+    background-color: #9a9a9a; }
   .home_session {
     width: 70%;
     display: flex;
@@ -31,6 +35,7 @@
     .home_form ::placeholder {
       color: #9a9a9a; }
     .home_form_input {
+      width: 97%;
       padding: 1rem;
       margin: 0.4rem;
       border: 0.1rem solid #dddfe2;
@@ -42,7 +47,7 @@
     .home_form_btn, .home_form_gbtn {
       padding: 1rem;
       margin: 0.4rem;
-      width: 50%;
+      width: 97%;
       background-color: #007fff;
       color: #ffffff;
       font-weight: 700;
@@ -51,6 +56,7 @@
       border-radius: 0.6rem;
       cursor: pointer; }
     .home_form_gbtn {
+      width: 100%;
       background-color: #ffffff;
       color: #007fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);

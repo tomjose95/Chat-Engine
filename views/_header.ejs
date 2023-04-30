@@ -8,9 +8,13 @@
                 </div>
             </a>
             <div class="nav_user">
-                <!-- <button class="nav_button">Sign In</button> -->
-                <button class="nav_button">Sign Out</button>
-                <!-- <div class="nav_btn" id="moon"><i id="theme" class="fa-solid fa-moon fa-lg" style="color: #005eff;"></i>
+
+                <% if (locals.user) { %>
+                    <a href="/sign-out"><button class="nav_button">Sign Out</button></a>
+                    <% }else{ %>
+                        <a href="/sign-up"><button class="nav_button">Sign Up</button></a>
+                        <% } %>
+                            <!-- <div class="nav_btn" id="moon"><i id="theme" class="fa-solid fa-moon fa-lg" style="color: #005eff;"></i>
                 </div>
                 <div class="nav_btn" id="sun"><i class="fa-solid fa-sun fa-lg" style="color: #005eff;"></i></div> -->
             </div>

@@ -10,6 +10,22 @@
 body {
   background-color: #f1f4f7; }
 
+.verification {
+  width: 70%;
+  margin: 1rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  color: #d32f2f;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #d32f2f;
+  align-self: center; }
+  .verification_text {
+    text-align: center;
+    padding: 2rem; }
+  .verification_link {
+    color: #2e7d32; }
+
 .overlay {
   position: fixed;
   top: 0;
