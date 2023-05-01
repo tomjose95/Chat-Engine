@@ -6,11 +6,16 @@ const sassMiddleware = require("node-sass-middleware");
 const expressLayout = require("express-ejs-layouts");
 const db = require("./config/mongoose");
 const MongoStore = require("connect-mongo")(session);
+
 const passport = require("passport");
 const passportLocal = require("./config/passport-local-stratergy");
 const googlePassport = require("./config/passport-google-auth2-Stratergy");
 const app = express();
 
+// const chatServer = require("http").Server(app);
+// const chatSockets = require("./config/chat_socket");
+// chatServer.listen(5000);
+// console.log("Chat server is listening at PORT :>> ", 5000);
 app.use(expressLayout);
 app.use(
   sassMiddleware({
@@ -50,6 +55,7 @@ app.set("layouts extractScripts", true);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use("/", require("./routes"));
 app.listen(port, (error) => {
   if (error) {

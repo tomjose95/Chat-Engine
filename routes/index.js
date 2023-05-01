@@ -10,6 +10,7 @@ router.post("/create", HomeController.create);
 router.get("/sign-out", HomeController.destorySession);
 router.get("/verified/:id", HomeController.verified);
 router.get("/send-mail/:id", HomeController.sendMail);
+router.post("/update/:id", passport.checkAuthentication, HomeController.update);
 router.post(
   "/create-session",
   passport.authenticate("local", { failureRedirect: "back" }),

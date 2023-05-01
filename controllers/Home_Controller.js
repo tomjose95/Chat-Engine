@@ -53,7 +53,6 @@ module.exports.create = async (req, res) => {
           }
           verifyMailer.verification(user);
 
-          console.log("Successfully created User :>> ", user);
           return res.redirect("/");
         }
       );
@@ -62,11 +61,17 @@ module.exports.create = async (req, res) => {
 };
 module.exports.verified = async (req, res) => {
   try {
-    let user = await User.findOneAndUpdate(
-      { id: req.params._id },
+    console.log("object :>> ", req.params.id);
+    userId = req.params.id;
+    console.log("userId :>> ", userId);
+    // let user = await User.findOne({ _id: userId });
+
+    let updateuser = await User.findOneAndUpdate(
+      { _id: req.params.id },
       { isVerified: true }
     );
-    user.save();
+    console.log("updateuser :>> ", updateuser);
+
     return res.redirect("/chat");
   } catch (e) {
     console.log("Error in verfication :>> ", e);
@@ -96,4 +101,30 @@ module.exports.destorySession = async (req, res) => {
 
     return res.redirect("/");
   });
+};
+
+module.exports.update = async (req, res) => {
+  if (req.user.id == req.params.id) {
+    try {
+      let user = await User.findById(req.params.id);
+      User.uploadedAvatar(req, res, function (err) {
+        if (err) {
+          console.log("*****Multer Error: ", err);
+        }
+
+        user.username = req.body.username;
+
+        if (req.file) {
+          // this is saving the path of the uploaded file into the avatar field in the user
+          user.avatar = User.avatarPath + "/" + req.file.filename;
+          console.log("user.avatar :>> ", user.avatar);
+        }
+        user.save();
+        return res.redirect("back");
+      });
+    } catch (err) {
+      req.flash("error", err);
+      return res.redirect("back");
+    }
+  }
 };

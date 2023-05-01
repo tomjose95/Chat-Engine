@@ -67,3 +67,11 @@
 
 .google-icon {
   width: 2rem; }
+
+@media screen and (max-width: 900px) {
+  .home_session {
+    flex-direction: column; }
+  .home_signup {
+    width: 100%; }
+  .home_messaging_image {
+    display: none; } }

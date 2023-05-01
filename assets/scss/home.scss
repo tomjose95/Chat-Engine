@@ -90,3 +90,17 @@ $bg-dark: #091827;
 .google-icon {
   width: 2rem;
 }
+
+@media screen and(max-width: 900px) {
+  .home {
+    &_session {
+      flex-direction: column;
+    }
+    &_signup {
+      width: 100%;
+    }
+    &_messaging_image {
+      display: none;
+    }
+  }
+}

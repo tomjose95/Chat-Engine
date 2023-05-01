@@ -1,21 +1,19 @@
 <div class="overlay">
     <div class="overlay_main">
-        <form action="" method="post" class="overlay_form">
-            <label for="file-input" type="file" name="profile-image">
-                <img src="/images/image.jpg" class="overlay_image" />
-            </label>
-            <input id="file-input" type="file" class="" name="profile-image" class="profile_image" />
-            <input type=" text" name="username" class="home_form_input" value="Tom Jose">
+        <form action="/update/<%=user.id  %>" class="overlay_form" enctype="multipart/form-data" method="post">
+            <img src="<%=user.avatar %>" alt="<%=user.avatar %>" class="overlay_image" />
+            <input type="file" name="avatar" class="profile_image" />
+            <input type=" text" name="username" class="home_form_input" value=<%=user.username %>>
             <button class="home_form_btn">Update</button>
         </form>
+
     </div>
 </div>
 <% if(!locals.user.isVerified) {%>
     <div class="verification">
         <% if(locals.user){ %>
-            <div class="verification_text">Check Inbox or <a href="/send-mail/<%=user.id %>"
-                    class="verification_link">Click
-                    Here</a> to verify your account </div>
+            <div class="verification_text">Check your inbox of the email address associated with ChatZip to verify your
+                account . </div>
             <% } %>
     </div>
     <% } %>
@@ -43,7 +41,7 @@
 
 
                                     <div class="chat_friend_list">
-                                        <img src="/images/image.jpg" alt="" class="chat_friend_image">
+                                        <img src="<%=user.avatar %>" alt="" class="chat_friend_image">
                                         <div class="chat_friend_username">
                                             <%=user.username %>
                                         </div>

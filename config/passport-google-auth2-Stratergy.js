@@ -29,7 +29,8 @@ passport.use(
               username: profile.displayName,
               email: profile.emails[0].value,
               password: crypto.randomBytes(20).toString("hex"),
-              isVerified: false,
+              isVerified: true,
+              avatar: "/images/image.jpg",
             },
             (error, user) => {
               if (error) {
