@@ -7,8 +7,8 @@ $(document).ready(function () {
     $(".overlay").hide();
     $(".overlay_main").slideUp();
   });
-
   $(".overlay_main").click((e) => {
     e.stopPropagation();
   });
+  //freinds
 });

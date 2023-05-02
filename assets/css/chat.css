@@ -26,12 +26,14 @@
     overflow: auto;
     flex-direction: column; }
   .chat_box_friend {
-    margin: 1rem;
+    margin: 0 1rem;
     padding: 1rem;
     background-color: #f1f4f7;
     color: #000000;
     border-radius: 1rem;
-    width: 50%; }
+    width: 50%;
+    display: flex;
+    flex-direction: column; }
   .chat_box_mainuser {
     margin: 1rem;
     padding: 1rem;
@@ -143,6 +145,18 @@
     border-right: 0.1rem solid #e7ebf0; }
   .chat_box {
     width: 70%; }
+    .chat_box_container {
+      padding: 0.4rem;
+      align-items: flex-start;
+      display: flex; }
+    .chat_box_chatuser {
+      color: #007fff;
+      font-weight: 400;
+      padding: 0 0 0.6rem 0; }
+    .chat_box_chatimg {
+      border-radius: 100%;
+      width: 1.4rem;
+      height: 1.4rem; }
     .chat_box_header {
       width: 100%;
       background-color: #f1f4f7; }

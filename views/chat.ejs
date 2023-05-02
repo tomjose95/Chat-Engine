@@ -40,12 +40,12 @@
                                 <% for(user of users){ %>
 
 
-                                    <div class="chat_friend_list">
+                                    <div class="chat_friend_list" id-user="<%= user.id %>">
                                         <img src="<%=user.avatar %>" alt="" class="chat_friend_image">
                                         <div class="chat_friend_username">
                                             <%=user.username %>
                                         </div>
-                                        <!-- <div class="chat_friend_timestamp">12:00</div> -->
+
                                     </div>
                                     <% } %>
 
@@ -56,51 +56,14 @@
                         <img src="/images/image.jpg" class="chat_box_image">
                         <div class="chat_box_username">Tharesh Jose</div>
                     </div>
-                    <div class="chat_box_main">
-                        <div class="chat_box_mainuser">
-                            Hello Tharesh
-                        </div>
-                        <div class="chat_box_friend">
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                            Hello Tom
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                        </div>
-                        <div class="chat_box_mainuser">
-                            Hello Tharesh
-                        </div>
-                        <div class="chat_box_friend">
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                            Hello Tom
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                        </div>
-                        <div class="chat_box_mainuser">
-                            Hello Tharesh
-                        </div>
-                        <div class="chat_box_friend">
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                            Hello Tom
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                        </div>
-                        <div class="chat_box_mainuser">
-                            Hello Tharesh
-                        </div>
-                        <div class="chat_box_friend">
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                            Hello Tom
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                        </div>
-                        <div class="chat_box_mainuser">
-                            Hello Tharesh
-                        </div>
-                        <div class="chat_box_friend">
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                            Hello Tom
-                            Hello Tom Hello Tom Hello Tom Hello Tom Hello Tom
-                        </div>
+                    <div class="chat_box_main" id="chat_box_main">
+
+
                     </div>
                     <div class="chat_box_text">
-                        <input type="text" name="" class="chat_box_input" placeholder="Type a message...">
-                        <button class="chat_button"><i class="fa-solid fa-paper-plane fa-xl"
+                        <input type="text" name="" class="chat_box_input" id="chat_box_input"
+                            placeholder="Type a message...">
+                        <button class="chat_button" id="send-message"><i class="fa-solid fa-paper-plane fa-xl"
                                 style="color: #ffffff;"></i></button>
                     </div>
                 </div>

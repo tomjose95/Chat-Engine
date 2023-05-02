@@ -12,10 +12,10 @@ const passportLocal = require("./config/passport-local-stratergy");
 const googlePassport = require("./config/passport-google-auth2-Stratergy");
 const app = express();
 
-// const chatServer = require("http").Server(app);
-// const chatSockets = require("./config/chat_socket");
-// chatServer.listen(5000);
-// console.log("Chat server is listening at PORT :>> ", 5000);
+const chatServer = require("http").Server(app);
+const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
+chatServer.listen(5000);
+console.log("chat server is listening on port :>> 5000");
 app.use(expressLayout);
 app.use(
   sassMiddleware({

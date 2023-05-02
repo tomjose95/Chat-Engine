@@ -25,7 +25,8 @@ body {
     padding: 2rem;
     color: black; }
 
-.overlay {
+.overlay,
+.useroverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -35,7 +36,8 @@ body {
   display: none;
   justify-content: center;
   align-items: center; }
-  .overlay_main {
+  .overlay_main,
+  .useroverlay_main {
     z-index: 3;
     background-color: #ffffff;
     border-radius: 0.6rem;
@@ -43,12 +45,14 @@ body {
     top: 30%;
     left: 50%;
     transform: translateX(-50%); }
-  .overlay_form {
+  .overlay_form,
+  .useroverlay_form {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem; }
-  .overlay_image {
+  .overlay_image,
+  .useroverlay_image {
     width: 10rem;
     border-radius: 100%; }
 
