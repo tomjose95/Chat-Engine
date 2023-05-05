@@ -79,6 +79,8 @@ class ChatEngine {
       newMessage.addClass(messageType);
 
       $("#chat_box_main").append(newMessage);
+      const myDiv = document.querySelector("#chat_box_main");
+      myDiv.scrollTop = myDiv.scrollHeight;
     });
   }
 }

@@ -26,7 +26,7 @@
                             <div class="chat_current_username">
                                 <%=locals.user.username%>
                                     <% if(locals.user.isVerified){ %>
-                                        <i class="fa-solid fa-check fa-sm" style="color: #007fff;"></i>
+                                        <i class="fa-solid fa-check fa-sm" style="color: #007fff;" title="verified"></i>
                                         <% } %>
                             </div>
                         </div>
@@ -37,13 +37,16 @@
                             </div>
 
                             <div class="chat_friend">
-                                <% for(user of users){ %>
+                                <% for(u of users){ %>
 
 
-                                    <div class="chat_friend_list" id-user="<%= user.id %>">
-                                        <img src="<%=user.avatar %>" alt="" class="chat_friend_image">
+                                    <div class="chat_friend_list" id-user="<%= u.id %>">
+                                        <img src="<%=u.avatar %>" alt="" class="chat_friend_image">
                                         <div class="chat_friend_username">
-                                            <%=user.username %>
+                                            <%=u.username %>
+                                                <div class=<%=(u.isVerified===true)?"":"noDisplay" %>> <i
+                                                        class="fa-solid fa-check fa-sm" title="Verified"
+                                                        style="color: #007fff;" title="verified"></i></div>
                                         </div>
 
                                     </div>
@@ -51,21 +54,42 @@
 
                             </div>
                 </div>
-                <div class="chat_box">
+                <div class=" chat_box">
                     <div class="chat_box_header">
-                        <img src="/images/image.jpg" class="chat_box_image">
-                        <div class="chat_box_username">Tharesh Jose</div>
+                        <img src="<%=locals.user.avatar%>" class="chat_box_image">
+                        <div class="chat_box_username">
+                            <%=locals.user.email%>
+                        </div>
                     </div>
                     <div class="chat_box_main" id="chat_box_main">
-
-
+                        <% for(chatMessage of chatMessages ) {%>
+                            <%if(locals.user.id===chatMessage.user.id) {%>
+                                <div class="chat_box_mainuser">
+                                    <p>
+                                        <%=chatMessage.chat%>
+                                    </p>
+                                </div>
+                                <% }else{ %>
+                                    <div class="chat_box_container">
+                                        <img src="<%=chatMessage.user.avatar%>" alt="" class="chat_box_chatimg">
+                                        <div class="chat_box_friend">
+                                            <div class="chat_box_chatuser">
+                                                <%=chatMessage.user.username%>
+                                            </div>
+                                            <%=chatMessage.chat%>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% } %>
                     </div>
-                    <div class="chat_box_text">
-                        <input type="text" name="" class="chat_box_input" id="chat_box_input"
-                            placeholder="Type a message...">
-                        <button class="chat_button" id="send-message"><i class="fa-solid fa-paper-plane fa-xl"
-                                style="color: #ffffff;"></i></button>
-                    </div>
+                    <% if(locals.user.isVerified){ %>
+                        <form class="chat_box_text" id="chat_box_text">
+                            <input type="text" name="chat" class="chat_box_input" id="chat_box_input"
+                                enctype="multipart/form-data" method="POST" placeholder="Type a message...">
+                            <button class="chat_button" id="send-message"><i class="fa-solid fa-paper-plane fa-xl"
+                                    style="color: #ffffff;"></i></button>
+                        </form>
+                        <% } %>
                 </div>
             </div>
         </div>

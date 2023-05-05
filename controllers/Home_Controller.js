@@ -1,4 +1,5 @@
 const User = require("./../models/user");
+const Chat = require("./../models/chat");
 const bcrypt = require("bcrypt");
 
 const verifyMailer = require("./../mailers/verification_mailer");
@@ -9,14 +10,27 @@ module.exports.home = (req, res) => {
   }
   res.render("home", { title: "Home | ChatZip" });
 };
-
+module.exports.chatsave = async (req, res) => {
+  console.log("res.body", res.body);
+  Chat.create({ user: req.user.id, chat: req.body.chat }, (error, chat) => {
+    if (error) {
+      console.log("error", error);
+    }
+    console.log("chat", chat);
+  });
+};
 module.exports.chat = async (req, res) => {
   if (!req.isAuthenticated()) {
     return res.redirect("/");
   }
   let user = await User.find({});
+  let chatMessage = await Chat.find({}).populate("user");
 
-  res.render("chat", { title: "Chat | ChatZip", users: user });
+  res.render("chat", {
+    title: "Chat | ChatZip",
+    users: user,
+    chatMessages: chatMessage,
+  });
 };
 
 module.exports.signup = async (req, res) => {
