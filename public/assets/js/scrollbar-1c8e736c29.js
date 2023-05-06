@@ -1,0 +1,1 @@
+$(document).ready(function(){console.log("scrollbar");const o=document.querySelector("#chat_box_main");o.scrollTop=o.scrollHeight});

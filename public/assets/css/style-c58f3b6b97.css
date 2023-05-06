@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif; }
+
+body {
+  background-color: #f1f4f7; }
+
+.verification {
+  width: 70%;
+  margin: 1rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(252, 215, 7, 0.4);
+  color: #fcd707;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #fcd707;
+  align-self: center; }
+  .verification_text {
+    text-align: center;
+    padding: 2rem;
+    color: black; }
+
+.overlay,
+.useroverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  .overlay_main,
+  .useroverlay_main {
+    z-index: 3;
+    background-color: #ffffff;
+    border-radius: 0.6rem;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%); }
+  .overlay_form,
+  .useroverlay_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem; }
+  .overlay_image,
+  .useroverlay_image {
+    width: 10rem;
+    border-radius: 100%; }
+
+.fa-circle-xmark {
+  align-self: flex-end; }
+
+.display {
+  display: fle; }
+
+#sun {
+  display: none; }
+
+@media screen and (max-width: 900px) {
+  * {
+    font-size: 12px; } }

@@ -1,5 +1,5 @@
 const nodeMailer = require("../config/nodemailer");
-
+const env = require("./../config/environment");
 exports.verification = (user) => {
   let htmlString = nodeMailer.renderTemplate(
     { user: user },

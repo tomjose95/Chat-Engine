@@ -1,0 +1,1 @@
+$(document).ready(function(){let t=document.getElementById("chat_box_text");$("#chat_box_text").submit(function(e){console.log("chatsave"),e.preventDefault(),function(t){fetch("/chatsave",{method:"POST",body:t})}(new FormData(t))})});

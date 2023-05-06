@@ -1,6 +1,8 @@
 const express = require("express");
 const port = 8000;
 const path = require("path");
+const logger = require("morgan");
+const env = require("./config/environment");
 var session = require("express-session");
 const sassMiddleware = require("node-sass-middleware");
 const expressLayout = require("express-ejs-layouts");
@@ -10,8 +12,9 @@ const MongoStore = require("connect-mongo")(session);
 const passport = require("passport");
 const passportLocal = require("./config/passport-local-stratergy");
 const googlePassport = require("./config/passport-google-auth2-Stratergy");
+const morgan = require("morgan");
 const app = express();
-
+require("./config/view-helpers")(app);
 const chatServer = require("http").Server(app);
 const chatSockets = require("./config/chat_socket").chatSockets(chatServer);
 chatServer.listen(5000);
@@ -19,8 +22,8 @@ console.log("chat server is listening on port :>> 5000");
 app.use(expressLayout);
 app.use(
   sassMiddleware({
-    src: "./assets/scss",
-    dest: "./assets/css",
+    src: path.join(env.asset_path, "scss"),
+    dest: path.join(env.asset_path, "css"),
     debug: true,
     outputStyle: "extended",
     prefix: "/css",
@@ -29,7 +32,7 @@ app.use(
 app.use(
   session({
     name: "ChatEngine",
-    secret: "secret",
+    secret: env.session_cookie_key,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -47,6 +50,7 @@ app.use(
   })
 );
 app.use(express.static("./assets"));
+app.use(logger(env.morgan.mode, env.morgan.options));
 app.use(express.urlencoded());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));

@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#moon").click(o=>{$("#moon").hide(),$("#sun").show(),$(".chat").css("background-color"," #091827")}),$("#sun").click(o=>{$("#sun").hide(),$("#moon").show()})});
