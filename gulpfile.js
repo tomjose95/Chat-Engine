@@ -9,13 +9,13 @@ const del = require("del");
 gulp.task("css", function () {
   console.log("minifying css...");
   gulp
-    .src("./assets/sass/**/*.scss")
+    .src("./sass/**/*.scss")
     .pipe(sass())
     .pipe(cssnano())
     .pipe(gulp.dest("./assets.css"));
 
   return gulp
-    .src("./assets/**/*.css")
+    .src("./**/*.css")
     .pipe(rev())
     .pipe(gulp.dest("./public/assets"))
     .pipe(
@@ -30,7 +30,7 @@ gulp.task("css", function () {
 gulp.task("js", function (done) {
   console.log("minifying js...");
   gulp
-    .src("./assets/**/*.js")
+    .src("./**/*.js")
     .pipe(uglify())
     .pipe(rev())
     .pipe(gulp.dest("./public/assets"))
@@ -47,7 +47,7 @@ gulp.task("js", function (done) {
 gulp.task("images", function (done) {
   console.log("compressing images...");
   gulp
-    .src("./assets/**/*.+(png|jpg|gif|svg|jpeg)")
+    .src("./**/*.+(png|jpg|gif|svg|jpeg)")
     .pipe(imagemin())
     .pipe(rev())
     .pipe(gulp.dest("./public/assets"))
