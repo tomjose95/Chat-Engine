@@ -41,7 +41,7 @@
 
 
                                     <div class="chat_friend_list" id-user="<%= u.id %>">
-                                        <img src="<%=u.avatar %>" alt="" class="chat_friend_image">
+                                        <img src="<%=u.avatar ? u.avatar : 'images/image.jpg' %>" alt="" class="chat_friend_image">
                                         <div class="chat_friend_username">
                                             <%=u.username %>
                                                 <div class=<%=(u.isVerified===true)?"":"noDisplay" %>> <i
