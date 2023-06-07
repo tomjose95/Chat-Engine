@@ -56,7 +56,7 @@
                 </div>
                 <div class=" chat_box">
                     <div class="chat_box_header">
-                        <img src="<%=locals.user.avatar%>" class="chat_box_image">
+                        <img src="<%=locals.user.avatar ? locals.user.avatar : 'images/image.jpg' %>" class="chat_box_image">
                         <div class="chat_box_username">
                             <%=locals.user.username%>
                         </div>
