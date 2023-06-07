@@ -22,7 +22,7 @@
                 <div class="chat_users">
                     <% if(locals.user){ %>
                         <div class="chat_current_user">
-                            <img src=<%=locals.user.avatar %> alt="current_user" class="chat_current_image">
+                            <img src=<%=locals.user.avatar ? locals.user.avatar : 'images/image.jpg' %> alt="current_user" class="chat_current_image">
                             <div class="chat_current_username">
                                 <%=locals.user.username%>
                                     <% if(locals.user.isVerified){ %>
