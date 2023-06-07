@@ -68,7 +68,9 @@ class ChatEngine {
       // );
       else {
         newMessage.append(
-          $(`<img src="${data.user_avatar}" alt="" class="chat_box_chatimg">
+          $(`<img src="${
+            data.user_avatar ? data.user_avatar : `images/image.jpg`
+          }" alt="" class="chat_box_chatimg">
         <div class="chat_box_friend">
             <div class="chat_box_chatuser">${data.user_name}</div>
             ${data.message}
