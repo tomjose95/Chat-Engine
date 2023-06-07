@@ -4,7 +4,7 @@ class ChatEngine {
     this.userEmail = userEmail;
     this.userAvatar = userAvatar;
     this.userName = userName;
-    this.socket = io.connect("https://chat-engine-app-backend-nodejs.onrender.com:5000");
+    this.socket = io.connect();
 
     if (this.userEmail) {
       this.connectionHandler();
