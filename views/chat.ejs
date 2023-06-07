@@ -22,7 +22,7 @@
                 <div class="chat_users">
                     <% if(locals.user){ %>
                         <div class="chat_current_user">
-                            <img src=<%=locals.user.avatar ? locals.user.avatar : 'images/image.jpg' %> alt="current_user" class="chat_current_image">
+                            <img src=<%=locals.user.avatar!==null ? locals.user.avatar : 'images/image.jpg' %> alt="current_user" class="chat_current_image">
                             <div class="chat_current_username">
                                 <%=locals.user.username%>
                                     <% if(locals.user.isVerified){ %>
@@ -41,7 +41,7 @@
 
 
                                     <div class="chat_friend_list" id-user="<%= u.id %>">
-                                        <img src="<%=u.avatar ? u.avatar : 'images/image.jpg' %>" alt="" class="chat_friend_image">
+                                        <img src="<%=u.avatar!==null ? u.avatar : 'images/image.jpg' %>" alt="" class="chat_friend_image">
                                         <div class="chat_friend_username">
                                             <%=u.username %>
                                                 <div class=<%=(u.isVerified===true)?"":"noDisplay" %>> <i
@@ -56,7 +56,7 @@
                 </div>
                 <div class=" chat_box">
                     <div class="chat_box_header">
-                        <img src="<%=locals.user.avatar ? locals.user.avatar : 'images/image.jpg' %>" class="chat_box_image">
+                        <img src="<%=locals.user.avatar!==null ? locals.user.avatar : 'images/image.jpg' %>" class="chat_box_image">
                         <div class="chat_box_username">
                             <%=locals.user.username%>
                         </div>
